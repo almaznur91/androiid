@@ -1,0 +1,50 @@
+201804222020_create_table_mscasecomment.xml
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="201804202020_create_table_mscasecomment" author="nurmukhametov"  >
+        <preConditions onFail="MARK_RAN" >
+            <tableExists tableName="mc_case" schemaName="supp"/>
+        </preConditions>
+
+        <createTable schemaName="supp" tableName="mc_case_comment" remarks="MEDDEV-11130">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="comment" type="char(500)"/>
+            <column name="case_id" type="int" >
+                <constraints nullable="false"
+                         foreignKeyName="case_id"
+                         referencedTableName="mc_case"
+                         referencedColumnNames="id" />
+            </column>
+        </createTable>
+    </changeSet>
+
+
+
+
+
+    <changeSet id="201804231030_insert_data" author="nurmukhametov">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="mc_case" schemaName="supp"/>
+        </preConditions>
+
+        <insert tableName="mc_case" schemaName="supp">
+            <column name="comment" remarks="try1"> try1 </column>
+            <column name="case_id">3424</column>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
