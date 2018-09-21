@@ -1,6 +1,6 @@
 package info.androidhive.sqlite.database.model;
 
-
+//hj
 
 public class Guarantee {
     public static final String TABLE_NAME = "notes";
@@ -18,7 +18,7 @@ public class Guarantee {
     private String to_dt;
 
 
-    // Create table SQL query
+    // Create table SQL queryпр п
 
     public static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + "("

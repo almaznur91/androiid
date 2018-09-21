@@ -68,8 +68,8 @@ public class GuaranteesAdapter extends RecyclerView.Adapter<GuaranteesAdapter.My
 
         // Formatting and displaying timestamp
         holder.timestamp.setText(formatDate(guarantee.getTimestamp()));
-        holder.from_dt.setText(formatDate(guarantee.getTimestamp()));
-        holder.to_dt.setText(formatDate(guarantee.getTimestamp()));
+        holder.from_dt.setText(guarantee.getFrom_dt());
+        holder.to_dt.setText(guarantee.getTo_dt());
     }
 
     @Override
@@ -88,6 +88,17 @@ public class GuaranteesAdapter extends RecyclerView.Adapter<GuaranteesAdapter.My
             Date date = fmt.parse(dateStr);
             SimpleDateFormat fmtOut = new SimpleDateFormat("MMM d");
             return fmtOut.format(date);
+        } catch (ParseException e) {
+
+        }
+
+        return "";
+    }
+    private String formatDateStandart(String dateStr) {
+        try {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = fmt.parse(dateStr);
+            return fmt.format(date);
         } catch (ParseException e) {
 
         }

@@ -14,7 +14,7 @@ import info.androidhive.sqlite.database.model.Guarantee;
 /**
  * Created by ravi on 15/03/18.
  */
-
+//j
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database Version
@@ -133,6 +133,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(Guarantee.COLUMN_NOTE, guarantee.getNote());
+        values.put(Guarantee.COLUMN_FROM_DT, guarantee.getFrom_dt());
+        values.put(Guarantee.COLUMN_TO_DT, guarantee.getTo_dt());
 
         // updating row
         return db.update(Guarantee.TABLE_NAME, values, Guarantee.COLUMN_ID + " = ?",

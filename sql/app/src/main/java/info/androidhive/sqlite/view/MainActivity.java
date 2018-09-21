@@ -115,10 +115,12 @@ public class MainActivity extends AppCompatActivity {
      * Updating note in db and updating
      * item in the list by its position
      */
-    private void updateNote(String note, int position) {
+    private void updateNote(String note, String from_dt, String to_dt, int position) {
         Guarantee n = guaranteesList.get(position);
         // updating note text
         n.setNote(note);
+        n.setFrom_dt(from_dt);
+        n.setTo_dt(to_dt);
 
         // updating note in db
         db.updateNote(n);
@@ -190,6 +192,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (shouldUpdate && guarantee != null) {
             inputNote.setText(guarantee.getNote());
+            inputFromFt.setText(guarantee.getFrom_dt());
+            inputToDt.setText(guarantee.getTo_dt());
+
         }
         alertDialogBuilderUserInput
                 .setCancelable(false)
@@ -222,7 +227,10 @@ public class MainActivity extends AppCompatActivity {
                 // check if user updating guarantee
                 if (shouldUpdate && guarantee != null) {
                     // update guarantee by it's id
-                    updateNote(inputNote.getText().toString(), position);
+                    updateNote(inputNote.getText().toString(),
+                            formatDate(inputFromFt.getText().toString()),
+                            formatDate(inputToDt.getText().toString()),
+                            position);
                 } else {
                     // create new guarantee
                     createNote(inputNote.getText().toString(),

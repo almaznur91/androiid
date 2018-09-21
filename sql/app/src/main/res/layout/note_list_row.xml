@@ -24,33 +24,10 @@
         android:id="@+id/timestamp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/note"
-        android:textColor="@color/timestamp"
-        android:textSize="@dimen/timestamp"
-        android:layout_toEndOf="@id/note" />
-
-    <TextView
-        android:id="@+id/from_dt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/timestamp"
-        android:textSize="@dimen/note_list_text" />
-
-    <TextView
-        android:id="@+id/to_dt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/timestamp"
-        android:textSize="@dimen/note_list_text" />
-
-    <TextView
-        android:id="@+id/newGuarantee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/timestamp"
         android:layout_toRightOf="@id/dot"
-        android:textColor="@color/note_list_text"
-        android:textSize="@dimen/note_list_text" />
+        android:textColor="@color/timestamp"
+        android:textSize="@dimen/timestamp" />
+
     <TextView
         android:id="@+id/note"
         android:layout_width="match_parent"
@@ -59,5 +36,24 @@
         android:layout_toRightOf="@id/dot"
         android:textColor="@color/note_list_text"
         android:textSize="@dimen/note_list_text" />
+    <TextView
+        android:id="@+id/from_dt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note"
+        android:layout_toRightOf="@id/dot"
+        android:textColor="@color/note_list_text"
+        android:textSize="@dimen/note_list_text"
+        />
+    <TextView
+        android:id="@+id/to_dt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/from_dt"
+        android:layout_toRightOf="@id/dot"
+        android:textColor="@color/note_list_text"
+        android:textSize="@dimen/note_list_text"
+        />
+
 
 </RelativeLayout>
